@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4">
+        <i class="fa-solid fa-chart-line me-2"> Your Expense Statistics for {{ selected_year }} </i>
+    </h2>
+    <form method="POST" action="/stats">
+        <select name="year" onchange="this.form.submit()">
+            {% for y in years %}
+            <option value="{{ y }}" {% if y==selected_year %}selected{% endif %}>{{ y }}</option>
+            
+            {% endfor %}
+        </select>
+        <div class="row g-4 mb-4">
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-muted">Total Yearly Expenses</h6>
+                        <h3 class="text-primary fw-bold">{{ "%.2f"|format(total_expenses or 0) or "0.00" }} {{default_currency.code}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-muted">Monthly Average</h6>
+                        <h3 class="text-success fw-bold">{{ "%.2f" | format(avg_per_month) or "0.00" }} {{default_currency.code}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-muted">Highest Expense</h6>
+                        {% if highest_expense %}
+                        <h3 class="text-danger fw-bold">
+                            {{ highest_expense[0].amount }} {{ highest_expense[0].category.name }} {{ highest_expense[0].description }}
+                            (converted: {{ "%.2f" | format(highest_expense[1]) }} {{ default_currency.code }})
+                        </h3>
+                        {% else %}
+                        <p>No expenses yet.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="text-muted">Change from previous year:</h6>
+                        <h3 class="text-danger fw-bold">{{ percent_change_display }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form method="POST" action="/stats">
+        <select name="year" onchange="this.form.submit()">
+            {% for y in years %}
+            <option value="{{ y }}" {% if y==selected_year %}selected{% endif %}>{{ y }}</option>
+            {% endfor %}
+        </select>
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-dark text-white">
+                <i class="fa-solid fa-calendar me-2"> Monthly Breakdown for {{ selected_year }} </i>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover align-middle text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Month</th>
+                            <th>Total</th>
+                            <th>Top Category</th>
+                            <th>Highest</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m in monthly_stats %}
+                        <tr>
+                            <td>{{ m.month }}</td>
+                            <td>{{ "%.2f"|format(m.total or 0) }} {{default_currency.code}}</td>
+                            <td>{{ m.top_category[0] }}</td>
+                            <td>{{ "%.2f"|format(m.highest) }} {{default_currency.code}}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="text-muted">No data available</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-dark text-white">
+        <i class="fa-solid fa-tags me-2"></i> Totals per Category
+    </div>
+    <div class="card-body">
+        <table class="table table-hover align-middle text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Category</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cat in total_per_cat %}
+                <tr>
+                    <td>{{ cat.name }}</td>
+                    <td>{{ "%.2f"|format(cat.converted_total) }} {{default_currency.code}}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="2" class="text-muted">No category data</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+common_currencies = {
+    "USD": "United States Dollar",
+    "EUR": "Euro",
+    "JPY": "Japanese Yen",
+    "GBP": "British Pound Sterling",
+    "AUD": "Australian Dollar",
+    "CAD": "Canadian Dollar",
+    "CHF": "Swiss Franc",
+    "CNY": "Chinese Yuan Renminbi",
+    "SEK": "Swedish Krona",
+    "NZD": "New Zealand Dollar",
+    "SGD": "Singapore Dollar",
+    "HKD": "Hong Kong Dollar",
+    "KRW": "South Korean Won",
+    "INR": "Indian Rupee",
+    "MXN": "Mexican Peso",
+    "BRL": "Brazilian Real",
+    "ZAR": "South African Rand",
+    "PLN": "Polish Zloty"
+}
