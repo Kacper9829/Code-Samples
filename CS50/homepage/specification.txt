@@ -1,0 +1,71 @@
+html tags
+1. <h1>,<h2>,<h3> etc
+2. <table>
+3. <a href>
+4. <div>
+5. <p>
+6. <img>
+7. <strong>
+8. <button>
+9. <i>
+10.<b>
+
+
+CSS
+.subpageBody {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: black;
+
+h3 {
+    font-family : 'Lucida Handwriting', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+
+.description{
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+
+}
+#englishButton{
+    background-image : url("https://flagcdn.com/64x48/gb.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 60px;
+    border: none;
+    font-family : 'Lucida Handwriting', serif;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dayilyWordDiv{
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+}
+
+JavaScript
+
+I used JS to create a word of the day widget that returns a new word for each day. The second script is just a simple flashcard to learn new words.
+
+Bootstrap
+
+I used many Bootstrap featrures to enhance the graphic side of my webpages, especially the accordion feature and the card feature.
+

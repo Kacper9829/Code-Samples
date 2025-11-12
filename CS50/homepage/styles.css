@@ -1,0 +1,164 @@
+h1 {
+    font-family : 'Lucida Handwriting', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    font-weight: 700;
+    font-size: 150px;
+}
+h2 {
+    font-family : 'Lucida Handwriting', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    font-weight: 700;
+    font-size: 40px;
+}
+h3 {
+    font-family : 'Lucida Handwriting', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+
+.description{
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+
+}
+
+#indexBody{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+
+}
+.subpageBody {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.column {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.leftColumn {
+    width: 15%;
+    padding: 20px;
+    color: black;
+}
+
+
+.rightColumn {
+    width: 85%;
+    padding: 20px;
+    color: black;
+    background-color: #ffff;
+}
+
+
+.btn-group-vertical .btn {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    color: black;
+    border: none;
+}
+
+.btn-group-vertical .btn:hover {
+    background-color: #2575fc;
+}
+
+
+.btn{
+    background: #ff7e5f;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+#returnButton{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#englishButton{
+    background-image : url("https://flagcdn.com/64x48/gb.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 60px;
+    border: none;
+    font-family : 'Lucida Handwriting', serif;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#polishButton{
+    background-image : url("https://flagcdn.com/64x48/pl.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 60px;
+    border: none;
+    font-family : 'Lucida Handwriting', serif;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#chineseButton{
+    background-image : url("https://flagcdn.com/64x48/cn.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 60px;
+    border: none;
+    font-family : 'Lucida Handwriting', serif;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+}
+#dayilyWordDiv{
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+}
