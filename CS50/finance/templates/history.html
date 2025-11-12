@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HISTORY
+{% endblock %}
+
+{% block main %}
+    <div class="container my-5">
+    <h2 class="text-center mb-4">Transaction History</h2>
+
+    <table class="table table-hover table-striped table-bordered text-center align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th>Stock Symbol</th>
+            <th>Stock Name</th>
+            <th>Price ($)</th>
+            <th>Quantity</th>
+            <th>Transaction Type</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in transaction_history %}
+        <tr>
+            <td>{{row.symbol}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.price | usd}}</td>
+            <td>{{row.qunatity}}</td>
+            <td>{{row.type}}</td>
+            <td>{{row.date}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+{% endblock %}
